@@ -1,5 +1,12 @@
-# Allegro-webscrapping
+#Allegro-webscrapper
 
-Prosta aplikacja szukająca produktów na allegro.pl i zapisująca wszystkie wyniki do pliku .json.
-Jest to moja pierwsza aplikacja web-scrappingowa, inspiracją do jej napisania był projekt https://github.com/KalleHallden/BlackFridayScrape.
-Jeżeli widzisz jakieś rażące błędy, będę wdzięczny za ich wskazanie. 
+Based on https://github.com/KalleHallden/BlackFridayScrape
+
+------------
+
+App searchs for product and saves all entries to json file.
+
+Single record includes data like
+- Name
+- Price 
+- Link to auction
