@@ -1,6 +1,6 @@
-#Allegro-webscrapper
+# Allegro-webscrapper
 
-Based on https://github.com/KalleHallden/BlackFridayScrape
+### Based on https://github.com/KalleHallden/BlackFridayScrape
 
 ------------
 
