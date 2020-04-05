@@ -1,1 +1,4 @@
-.log
+*.log
+.__pycache__/
+*.json
+test.py
