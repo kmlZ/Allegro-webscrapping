@@ -1,2 +1,2 @@
-geckodriver.log
-__pycahce__
+*.log
+/__pycache__

@@ -13,9 +13,11 @@ import json
 
 SEARCH_ITEM = input("Wpisz nazwę produktu\n")
 # SEARCH_ITEM = "asd"
+JSNON_FILE_NAME = SEARCH_ITEM.replace(" ","_") + ".json"
+print(JSNON_FILE_NAME)
 
 options = Options()
-options.headless = True
+options.headless = False
 browser = webdriver.Firefox(options=options)
 browser.get("https://allegro.pl")
 
@@ -26,10 +28,10 @@ headers = {
 products = []
 
 def search():
-    close = WebDriverWait(browser,5).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div[8]/div/div[2]/div/button")))
+    close = WebDriverWait(browser,5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button._qdoeh:nth-child(1)")))
     close.click()
-    browser.find_element_by_xpath("/html/body/div[2]/div[2]/header/div/div/div/div/form/input").send_keys(SEARCH_ITEM)
-    browser.find_element_by_xpath("/html/body/div[2]/div[2]/header/div/div/div/div/form/button").click()
+    browser.find_element_by_css_selector("._d25db_3K7x6").send_keys(SEARCH_ITEM)
+    browser.find_element_by_xpath("/html/body/div[2]/div[3]/header/div/div/div/div/form/button").click()
     soup = BeautifulSoup(requests.get(browser.current_url, headers = headers).content, "html5lib")
     soup.findChildren()
     for element in soup.find_all('div', class_="_9c44d_2H7Kt"):
@@ -49,7 +51,7 @@ def search():
         print("Link: " + link)
         print()
     
-    with open('products.json', 'w', encoding='utf8') as json_file:
+    with open(JSNON_FILE_NAME, 'w', encoding='utf8') as json_file:
         data = {}
         data["Products"] = []
         for prod in products:
