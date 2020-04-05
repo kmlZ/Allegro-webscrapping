@@ -21,7 +21,7 @@ print(JSNON_FILE_NAME)
 
 options = Options()
 options.headless = False
-browser = webdriver.Firefox(options=options)
+browser = webdriver.Firefox(executable_path="drivers/geckodriver.exe",options=options)
 browser.get("https://allegro.pl")
 
 headers = {
