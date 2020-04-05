@@ -1,4 +1,3 @@
-geckodriver.log
-search_output/*.json
-__pycache__/
+*.log
+*.pyc
 
