@@ -13,7 +13,7 @@ import json
 
 SEARCH_ITEM = input("Wpisz nazwę produktu\n")
 # SEARCH_ITEM = "asd"
-JSNON_FILE_NAME = SEARCH_ITEM.replace(" ","_") + ".json"
+JSNON_FILE_NAME = "search_output/"+SEARCH_ITEM.replace(" ","_") + ".json"
 print(JSNON_FILE_NAME)
 
 options = Options()
